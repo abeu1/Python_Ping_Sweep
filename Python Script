@@ -1,0 +1,11 @@
+import os
+
+network_range = input("Please enter network address in 'x.x.x.' format \n")
+
+for ip in range(1, 255):
+    address = network_range + str(ip)
+    res = os.system("ping -c 1 -w 1 " + address + " >/dev/null")
+    if res == 0:
+        print(address + " is alive!") 
+    else:
+       print(address + " is dead")
